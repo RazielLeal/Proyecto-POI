@@ -1,0 +1,94 @@
+#text-login{
+    color: black; 
+    font-size: 30px; 
+    margin-bottom: -20px;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+#login 
+{
+    background-color: white; 
+    width: 400px; 
+    height: 360px; 
+    margin: auto;  
+    margin-top: 5px;
+    padding: 10px;
+    text-align: center;
+    padding-top: 40px;
+    font-weight: bold;
+    border-radius: 15px;
+
+    animation: slideDown 0.7s ease-out;
+}
+
+#text_email
+    {
+        margin-top: 20px;
+        margin-right: 10px;
+        height: 40px;
+        width: 270px;
+        border-radius: 4px;
+        border: solid 1px #aaa;
+        padding: 4px;
+        font-size: 16px;
+        
+    }
+#text_password
+    {
+        margin-right: 10px;
+        height: 40px;
+        width: 270px;
+        border-radius: 4px;
+        border: solid 1px #aaa;
+        padding: 4px;
+        font-size: 16px;
+    }
+
+#registerLink
+{
+    font-weight: bold;
+    color: rgb(209, 24, 24);
+    font-size:14px; 
+    text-decoration:underline;   
+}
+
+#botonLogin
+    {   
+        margin-top: 20px;
+        width: 300px;
+        height: 50px;
+        border-radius: 4px;
+        font-weight: bold;  
+        border: none;
+        background-color: rgb(209, 24, 24); 
+        color: white;
+        font-size: 15px;
+        cursor:pointer;
+    }
+
+.button-grow {
+    transition: all 0.3s ease-in-out;
+}
+
+.button-grow:hover{
+    transform: scale(1.1);
+}
+
+footer
+{
+        text-align: center;
+        margin-top: auto;
+        padding: 10px;
+        background-color: #ff191914;
+        color:white;
+}

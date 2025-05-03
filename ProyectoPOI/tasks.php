@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tareas</title>
+    <link rel="stylesheet" href="CSS/task.css">
+    <link rel="stylesheet" href="CSS/general.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Nombre o logo</h1>
+            <div class = "navegation_bar">
+                <a href="chat_priv.php" class = "tag-width"></a>
+                <a href="chat_group.php" class = "tag-width"></a>
+                <!-- Tasks -->
+                <a href="" class = "tag-width"></a>
+                <a href="rewards.php" class = "tag-width"></a>
+                <a href="settings.php" class = "tag-width"></a>
+                <a href="logout.php" class = "tag-width"></a>
+            </div>
+            <img src="CSS/img/avatar.png" alt="Avatar" class="avatar">
+        </nav>
+    </header>
+
+    <br><br><br><br><br>
+
+    <div class="container">
+        <!-- Panel izquierdo con lista de grupos -->
+        <aside class="group-list">
+            <h2>Tareas</h2>
+            <ul>
+                <li onclick="openTasks('grupo1')">⚡ Tarea 1</li>
+                <li onclick="openTasks('grupo2')">🔥 Tarea 2</li>
+                <li onclick="openTasks('grupo3')">🌎 Tarea 3</li>
+            </ul>
+        </aside>
+
+        <!-- Panel derecho con tareas -->
+        <section class="task-container">
+            <div id="task-header">
+                <h2 id="group-name">Selecciona una tarea</h2>
+                <p id="group-members"></p>
+            </div>
+            
+            <div class="task-box" id="task-box">
+                <p>📝 Aquí aparecerán las tareas...</p>
+            </div>
+            <div class="task-input">
+                <input type="text" id="new-task" placeholder="Agregar nueva tarea...">
+                <button onclick="addTask()">+ Agregar</button>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Datos de ejemplo de los grupos y tareas
+        const grupos = {
+            grupo1: { nombre: "⚡ Grupo 1", miembros: "Ana, Carlos, David", tareas: ["Diseñar UI", "Conectar base de datos"] },
+            grupo2: { nombre: "🔥 Grupo 2", miembros: "Sofía, Marcos, Elena", tareas: ["Implementar autenticación", "Optimizar API"] },
+            grupo3: { nombre: "🌎 Grupo 3", miembros: "Luis, Marta, Pedro", tareas: ["Pruebas de seguridad", "Configurar hosting"] }
+        };
+
+        // Función para abrir el panel de tareas de un grupo
+        function openTasks(grupo) {
+            document.getElementById("group-name").textContent = grupos[grupo].nombre;
+            document.getElementById("group-members").textContent = grupos[grupo].miembros;
+            let taskBox = document.getElementById("task-box");
+            taskBox.innerHTML = "";
+            
+            grupos[grupo].tareas.forEach((tarea, index) => {
+                let taskItem = document.createElement("p");
+                taskItem.innerHTML = `<input type="checkbox" id="task-${index}"> <label for="task-${index}">${tarea}</label>`;
+                taskBox.appendChild(taskItem);
+            });
+        }
+
+        // Función para agregar una nueva tarea
+        function addTask() {
+            let newTask = document.getElementById("new-task").value;
+            if (newTask.trim() !== "") {
+                let taskBox = document.getElementById("task-box");
+                let taskItem = document.createElement("p");
+                taskItem.innerHTML = `<input type="checkbox"> <label>${newTask}</label>`;
+                taskBox.appendChild(taskItem);
+                document.getElementById("new-task").value = "";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,285 @@
+
+/* Panel izquierdo - Lista de grupos */
+.group-list {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-right: 2px solid rgba(255, 255, 255, 0.3);
+    overflow: hidden;
+}
+
+.group-list h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.group-list ul {
+    flex-grow: 1; /* Para que la lista ocupe todo el espacio disponible */
+    overflow-y: auto; /* Para que la lista sea scrollable */
+    max-height: 64vh;
+    padding: 0;
+    list-style: none;
+}
+
+.group-list li {
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.3);
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    margin-right: 5px;
+}
+
+.group-list div{
+    margin-top: auto;
+    text-align: center;
+}
+
+.group-list button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #ff4e50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.group-list li:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/*Personalizar scrollbar*/
+.group-list ul::-webkit-scrollbar {
+    width: 4px;
+}
+
+.group-list ul::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 4px;
+}
+
+.group-list ul::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+/* Panel derecho - Chat */
+.chat-container{
+    width: 70%;
+    display: grid;
+    grid-template-rows: 15% 71% 8%;
+    gap: 3%;
+    padding: 10px;
+    margin: 10px;
+    visibility: visible;
+}
+
+.show{
+    display:grid !important;
+    visibility: visible !important;
+}
+.hide{
+    display: none !important;
+    visibility: hidden !important;
+}
+/* Cabecera del chat */
+.chat-header{
+    justify-content: left;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    height: auto;
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+    padding: 0 20px;
+}
+
+#header-createGC{
+    grid-column: 0/2;
+}
+#group-name
+{
+    justify-self: left;
+    align-self: center;
+    margin: 0;
+}
+#group-members
+{
+    justify-self: left;
+    align-self: center;
+    margin: 0;
+}
+
+/* Área del chat */
+.chat-box {
+    overflow-y: auto;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    height: 100%;
+    width: auto;
+}
+
+.chat-box p{
+    margin: 0px;
+    padding: 20px;
+}
+/* Entrada de mensaje */
+.chat-input {
+    display: grid;
+    grid-template-columns: 7% 7% 76% 7%;
+    gap: 1%;
+    height: 30px;
+}
+
+.chat-input input {
+    border: none;
+    border-radius: 5px;    
+}
+
+.chat-input button {
+    border: none;
+    background: #ff4e50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.chat-input button:hover {
+    background: #d43f3a;
+}
+
+/*PANEL DERECHO - CREACION DE GRUPO*/
+#members-box{
+    padding: 10px 10px 10px 10px;
+    display: grid;
+    grid-template-rows: 10% 90%;
+    gap: 10px;
+    overflow: hidden;
+}
+
+.botonescreaciongpos{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 20px;
+    height: 30px;
+    align-self: center;
+    justify-self: center;
+
+}
+
+.botonescreaciongpos button{
+    border: none;
+    background: #ff4e50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    width:max-content;
+    padding: 10px 40px 10px 40px;
+}
+
+#input-group-name{
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0);
+    border-style: none;
+    border-color: solid transparent;
+    grid-row: 1/3;
+    color: inherit;
+    width: 110%;
+}
+
+#input-group-name::placeholder {
+    color: rgba(255, 255, 255, 0.774);
+    font-weight: bolder;
+}
+
+.invitar_contactos_container{
+    display: grid;
+    grid-row: 2/3;
+    grid-auto-rows: 70px;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    justify-items: center;
+    padding: 10px;
+    margin: 10px 0 10px 0;
+    overflow-y: auto;
+}
+  
+.invitar_contactos_container::-webkit-scrollbar {
+    width: 4px;
+}
+
+.invitar_contactos_container::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.144);
+    border-radius: 4px;
+}
+
+.invitar_contactos_container::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+.contacto_a_invitar_container{
+    background: rgba(255, 255, 255, 0.3);
+    height: 60px;
+    width: 70%;
+    border-radius: 7px;
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-auto-rows: 65px;
+    text-align: center;
+    align-content: center;
+    padding: 5px;
+}
+.contacto_seleccionado{
+    background: rgba(0, 255, 0, 0.3) !important;
+}
+.contacto_a_invitar_container:hover{
+    background: rgba(255, 255, 255, 0.5);
+
+}
+
+.nombreinvitado{
+    align-self: center;
+    justify-self: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 70px;
+}
+
+.imgcontacto{
+    max-width: inherit;
+    max-height: 50px;
+    align-self: center;
+    justify-self: center;
+    border-radius: 100px;
+}
+
+.buscador_para_invitar{
+    position: fixed;
+    grid-row: 1/2;  
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.205);
+    border-style: none;
+    border-color: solid transparent;
+    grid-row: 1/3;
+    color: inherit;
+    margin: 10px 10px 10px 10px;
+}
+
+.buscador_para_invitar::placeholder {
+    color: rgba(255, 255, 255, 0.774);
+}
+
+.buscador_para_invitar:hover {
+    cursor: text;
+}
+

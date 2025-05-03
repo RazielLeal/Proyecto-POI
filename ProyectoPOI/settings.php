@@ -1,0 +1,108 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuración</title>
+    <link rel="stylesheet" href="CSS/general.css">
+    <link rel="stylesheet" href="CSS/settings.css">
+    
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Nombre o logo</h1>
+            <div class = "navegation_bar">
+                <a href="chat_priv.php" class = "tag-width"></a>
+                <a href="chat_group.php" class = "tag-width"></a>
+                <a href="tasks.php" class = "tag-width"></a>
+                <a href="rewards.php" class = "tag-width"></a>
+                <!-- Settings -->
+                <a href="" class = "tag-width"></a>
+                <a href="logout.php" class = "tag-width"></a>
+            </div>
+            
+            <img src="CSS/img/avatar.png" alt="Avatar" class="avatar">
+        </nav>
+    </header>
+    <br><br><br><br><br><br>
+
+    <div class = "container">
+        <aside class = "basic-data">
+            <!-- <h2> Informacion básica </h2> -->
+            <div class = "image_frame">
+                <img src = "CSS/img/avatar2.png" id = "image_input" class = "profile_image">
+            </div>
+            <br><br>
+
+            <input type="file" id = "image"> 
+        </aside>
+        <section class = "user_data">
+            <main>
+                <label id = "text_name">Nombre:</label> <br>
+                <input type="text" id="name" placeholder="Nombre(s)" disabled>            
+                <input type="text" id="lastname" placeholder="Apellidos" disabled> <br><br>
+                
+                <label id = "text_email">Correo electrónico:</label> <br>
+                <input type="email" id="email" placeholder="Correo electrónico" disabled> <br><br>
+
+                <label>Cambiar contraseña</label> <br>
+                <input type="password" id = "password" placeholder="Nueva contraseña" disabled>
+                <input type="password" id="passwordCheck" placeholder="Confirmar contraseña" required disabled> <br><br>
+                 
+                <div class = "edit_buttons">
+                    <button id = "edit_button">Activar edición</button><br>
+                    <button type = "submit" id = "save_button">Guardar cambios</button>
+                </div>
+                
+            </main>
+        </section>
+    </div>
+    
+   <!-- <script src = "JS/load-image.js"></script> -->
+    <script>
+        const edit_button = document.getElementById("edit_button");
+
+        edit_button.addEventListener("click", () => {
+            const name = document.getElementById("name");
+            const lastname = document.getElementById("lastname");
+            const email = document.getElementById("email");
+            const password = document.getElementById("password");
+            const passwordCheck = document.getElementById("passwordCheck");
+
+            name.classList.add("placeholderactivo")
+            lastname.classList.add("placeholderactivo")
+            email.classList.add("placeholderactivo")
+            password.classList.add("placeholderactivo")
+            passwordCheck.classList.add("placeholderactivo")
+
+            name.disabled = !name.disabled;
+            lastname.disabled = !lastname.disabled;
+            email.disabled = !email.disabled;
+            password.disabled = !password.disabled;
+            passwordCheck.disabled = !passwordCheck.disabled;
+        });
+
+        const save_button = document.getElementById("save_button");
+
+        save_button.addEventListener("click", () => {
+            const name = document.getElementById("name");
+            const lastname = document.getElementById("lastname");
+            const email = document.getElementById("email");
+            const password = document.getElementById("password");
+            const passwordCheck = document.getElementById("passwordCheck");
+
+            name.classList.remove("placeholderactivo");
+            lastname.classList.remove("placeholderactivo");  
+            email.classList.remove("placeholderactivo");
+            password.classList.remove("placeholderactivo");
+            passwordCheck.classList.remove("placeholderactivo");
+
+            name.disabled = !name.disabled;
+            lastname.disabled = !lastname.disabled;
+            email.disabled = !email.disabled;
+            password.disabled = !password.disabled;
+            passwordCheck.disabled = !passwordCheck.disabled;
+        });
+    </script>
+</body>
+</html>

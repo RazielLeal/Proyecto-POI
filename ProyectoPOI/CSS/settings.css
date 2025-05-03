@@ -1,0 +1,146 @@
+
+.container {
+    display: flex;
+    width: 60%;
+    height:420px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 50px;
+    border: 1px solid #f1f1f134;
+    animation: slideDown 0.7s ease-out;
+}
+
+.basic-data {
+    width: 30%;
+    background: rgba(152, 0, 0, 0.258);
+    padding: 20px;
+    border-right: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.user-data {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+main{
+    margin-left: 45px;
+    margin-top: 15px;
+}
+
+label{
+    margin-top:10px; 
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.placeholderactivo{
+    background-color: rgba(255, 255, 255, .7) !important;
+}
+.placeholderactivo::placeholder{
+    color:black;
+    filter: opacity(100%);
+}
+::placeholder{
+    color:rgb(211, 211, 211); 
+    filter: opacity(70%);
+}
+
+#name, #lastname, #password, #passwordCheck{
+    height: 40px;
+    width: 200px;
+    border-radius: 5px;
+    border: solid 1px #e6e6e6c7;
+    padding: 4px;
+    font-size: 16px;
+    margin-top: 10px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#email{
+    height: 40px;
+    width: 405px;
+    border-radius: 5px;
+    border: solid 1px #e6e6e6;
+    padding: 4px;
+    font-size: 16px;
+    margin-top: 10px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#image{
+    height: 40px;
+    width: 220px;
+    border-radius: 5px;
+    padding: 4px;
+    font-size: 16px;
+    margin-top: 10px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.image_frame{
+    margin-left: 12px;
+}
+.profile_image {
+    width: 200px;
+    height: 200px; 
+    border-radius: 50%;
+    border: 3px solid white;
+}
+
+.edit_buttons{
+    margin-top: 20px;
+}
+
+#edit_button{
+    width: 100%;
+    height: 35px;
+    border-radius: 4px;
+    font-weight: bold;  
+    border: none;
+    background-color: rgb(209, 24, 24); 
+    color: white;
+    font-size: 15px;
+    cursor:pointer;
+    margin-bottom:auto;
+}
+
+#edit_button:hover{
+    transform: scale(1.1);
+}
+
+#save_button{
+    width: 100%;
+    height: 35px;
+    border-radius: 4px;
+    border: none;
+    background-color:white; 
+    color: black;
+    font-size: 15px;
+    cursor:pointer;
+    border: 2px solid rgb(216, 216, 216); 
+    margin-top: 5px;
+}
+
+#save_button:hover:enabled{
+    transform: scale(1.1);
+}
+
+#save_button:disabled{
+    background-color:rgb(211, 211, 211); 
+    color: rgb(110, 110, 110);
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

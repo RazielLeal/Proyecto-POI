@@ -1,0 +1,165 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+body {
+    /* background: linear-gradient(to bottom, #ff4e50, #1f1c2c); */
+    background-image: url("img/background-login.png"); 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    color: white;
+    margin: 0;
+    backdrop-filter: blur(5px);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    background-color: rgb(233, 235, 238);
+}
+
+.avatar {
+    margin-left: auto;
+    margin-right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 5px solid white;
+}
+
+h1{
+    margin-left: 30px;
+}
+
+.container {
+    display: flex;
+    height: 85vh;
+    width: 90%;
+    margin: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+
+nav {
+    position: fixed; /* Fijar en la parte superior */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px); /* Efecto de difuminado */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Alinea verticalmente */
+    padding: 15px 0;
+}
+
+.navegation_bar{
+    position: absolute;
+    cursor: auto;
+}
+
+nav a {
+    padding: 10px 20px; 
+    margin: 0 10px;
+    border-radius: 5px;
+    transition: background 0.7s;
+}
+
+/* Si llegan a haber muchos iconos, aqui se hace el espacio de los iconos mas pequeño */
+.tag-width{
+    content: " ";
+    display:inline-block;
+    width: 40px;
+    height: 40px;
+}
+
+nav a:hover {
+    background: rgba(255, 73, 73, 0.826);
+}
+
+nav a:nth-child(1){
+    background-image: url("img/chat-icon.png"); 
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: fadeIn 1.0s ease-in; 
+}
+
+nav a:nth-child(2){
+    background-image: url("img/group-icon.png"); 
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: fadeIn 1.3s ease-in; 
+}
+
+nav a:nth-child(3){
+    background-image: url("img/task-icon.png"); 
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: fadeIn 1.6s ease-in; 
+}
+
+nav a:nth-child(4){
+    background-image: url("img/reward-icon.png"); 
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: fadeIn 1.9s ease-in; 
+}
+
+nav a:nth-child(5){
+    background-image: url("img/settings-icon.png"); 
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: fadeIn 2.2s ease-in; 
+}
+nav a:nth-child(6){
+    background-image: url("img/logout.png"); 
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: fadeIn 2.2s ease-in; 
+}
+/* En caso de querer agregar otro elemento a la barra de navegacion, solo se cambia la imagen */
+/* nav a:nth-child(?){
+    background-image: url("<dirección de la imagen o icono>"); 
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: fadeIn 2.2s ease-in; 
+} */
+
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+    }
+
+    nav a {
+        margin: 5px 0;
+        width: 80%;
+        text-align: center;
+    }
+
+    nav img{
+        margin-top: 10px;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,150 @@
+#text-register{
+    color: black; 
+    font-size: 30px; 
+    margin-bottom: -20px;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+#registro
+{
+    background: white;
+    width: 500px;
+    height: 550px; 
+    margin: auto;
+    margin-top: 40px;
+    padding: 10px;
+    text-align: center;
+    padding-top: 40px;
+    font-weight: bold;
+    border-radius: 15px;
+    animation: slideDown 0.7s ease-out;
+}
+
+#text_name{
+    margin-right: 330px;
+    font-size: 20px;
+}
+
+#text_email{
+    margin-right: 240px;
+    font-size: 20px;
+}
+
+#text_password{
+    margin-right: 310px;
+    font-size: 20px;
+}
+
+#name, #lastname, #password, #passwordCheck{
+    height: 40px;
+    width: 200px;
+    border-radius: 15px;
+    border: solid 1px #e6e6e6;
+    padding: 4px;
+    font-size: 16px;
+    margin-left: 10px;
+    margin-top: 10px;
+    background: rgba(255, 255, 255, 0.1);
+}
+#birthday, #email, #username{
+    height: 40px;
+    width: 425px;
+    border-radius: 15px;
+    border: solid 1px #e6e6e6;
+    padding: 4px;
+    font-size: 16px;
+    margin-left: 10px;
+    margin-top: 10px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.error-message{
+    color: rgb(255, 0, 0);
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+#loginLink
+{
+    font-weight: bold;
+    color: rgb(209, 24, 24);
+    font-size:14px;
+    text-decoration:underline;
+}
+
+#boton
+{
+    width: 300px;
+    height: 40px;
+    border-radius: 4px;
+    font-weight: bold;
+    border: none;
+    background-color: rgb(115, 59, 152);
+    color: white;
+}
+
+#botonRegister
+{
+    margin-top: 20px;
+    width: 430px;
+    height: 50px;
+    border-radius: 4px;
+    font-weight: bold;
+    border: none;
+    background-color: rgb(209, 24, 24);
+    color: white;
+    font-size: 15px;
+    cursor:pointer;
+}
+
+#botonReturn
+{
+    margin-top: 10px;
+    width: 430px;
+    height: 50px;
+    border-radius: 4px;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    font-size: 15px;
+    cursor:pointer;
+    border-width: 1px;
+}
+
+#botonReturn:hover{
+    background-color: rgb(228, 228, 228);
+}
+
+.button-grow {
+    transition: all 0.3s ease-in-out;
+}
+
+.button-grow:hover{
+    transform: scale(1.1);
+}
+
+#error-name{
+    color:  rgb(209, 24, 24); 
+}
+
+footer
+{
+    text-align: center;
+    margin-top: auto;
+    padding: 10px;
+    background-color: #ff191914;
+    color:white;
+}
+
+label{
+    color: black;
+}
