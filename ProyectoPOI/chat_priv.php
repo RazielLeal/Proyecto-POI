@@ -9,32 +9,6 @@ if (!isset($_SESSION['unique_id'])) {
     exit();
 }
 
-/*
-ESTO ES PARA CERRAR SESIÓN, HAY QUE PONERLO COMO UN CODIGO EN EL BOTON DE LOGOUT
-session_start();
-require 'php/confi.php'; // Asegúrate de que la ruta sea correcta
-
-// Verificar si el usuario está logueado
-if (isset($_SESSION['unique_id'])) {
-    $unique_id = $_SESSION['unique_id'];
-
-    // Actualizar el estado a 'OFFLINE'
-    $updateStatus = "UPDATE users SET connected = 'OFFLINE' WHERE unique_id = ?";
-    $stmt = $conn->prepare($updateStatus);
-    $stmt->bind_param("s", $unique_id);
-    $stmt->execute();
-
-    // Destruir sesión y redirigir al login
-    session_unset();
-    session_destroy();
-    header("Location: login.php");
-    exit();
-} else {
-    header("Location: login.php");
-    exit();
-}
-*/
-
 
 // Obtener la ruta de la imagen del usuario desde la sesión
 $user_img = isset($_SESSION['img']) ? $_SESSION['img'] : 'CSS/img/avatar.png'; // Imagen predeterminada si no hay imagen
@@ -73,16 +47,6 @@ $result = $stmt->get_result();
 if (!$result) {
     die("Error al obtener los resultados: " . $stmt->error);
 }
-// $stmt = $conn->prepare($mostrarchats);
-// $stmt->bind_param("iii", $user_id, $user_id, $user_id); // Bind the parameters
-// $stmt->execute();
-// $result = $stmt->get_result();
-
-// $sql = "SELECT user_id, unique_id, fname, lname, img, connected,
-// FROM users 
-//         ";
-// $result = $conn->query($sql);
-
 
 ?>
 
