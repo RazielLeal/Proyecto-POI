@@ -24,22 +24,17 @@ $stmt->execute();
 $user_id = $_SESSION['user_id']; // Obtener el user_id del usuario logueado
 
 $mostrarchats = "SELECT 
-    users.user_id, 
-    users.unique_id, 
-    users.fname, 
-    users.lname, 
-    users.img, 
-    users.connected, 
-    chat.chat_id, 
-    chat.user_id1, 
-    chat.user_id2
-FROM users
-LEFT JOIN chat ON users.user_id = chat.user_id1 OR users.user_id = chat.user_id2
-WHERE chat.user_id1=? OR chat.user_id2=? AND  users.user_id!=?
-";
+    user_id, 
+    unique_id, 
+    fname, 
+    lname, 
+    img, 
+    connected 
+    FROM users
+    WHERE user_id != ? ";
 
 $stmt = $conn->prepare($mostrarchats);
-$stmt->bind_param("iii", $user_id, $user_id, $user_id);
+$stmt->bind_param("i", $user_id);
 if (!$stmt->execute()) {
     die("Error al ejecutar la consulta: " . $stmt->error);
 }
@@ -66,7 +61,7 @@ if (!$result) {
             <div class = "navegation_bar">
                 <!-- Chat privado -->
                 <a href="" class = "tag-width"></a> 
-                <a href="chat_group.php" class = "tag-width"></a>
+                <!-- <a href="chat_group.php" class = "tag-width"></a> -->
                 <a href="tasks.php" class = "tag-width"></a>
                 <a href="rewards.php" class = "tag-width"></a>
                 <a href="settings.php" class = "tag-width"></a>
@@ -91,13 +86,12 @@ if (!$result) {
                         $full_name = $row['fname'] . " " . $row['lname'];
                         $user_img = !empty($row['img']) ? $row['img'] : "CSS/img/avatar.png";
                         $connected = $row['connected']; // Estado de conexión de los usuarios en lista
-                        $chat_id = $row['chat_id'];
 
                         if($row['unique_id'] == $unique_id){
                             continue; // No mostrar el propio usuario en la lista
 
                         }
-                        echo "<li id='user-$user_id' onclick='openChat(\"$full_name\", \"$connected\", \"$chat_id\")'>"; 
+                        echo "<li id='user-$user_id' onclick='openChat(\"$full_name\", \"$connected\")'>"; 
                         echo "<img src='$user_img' alt='$full_name' class='user-avatar'>";
                         echo $full_name;
                         echo "<span id='user-$user_id-unread' class='unread-badge'>0</span>";

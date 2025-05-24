@@ -33,7 +33,7 @@ if (isset($_POST['submit'])) {
 
                 if (mysqli_query($conn, $query)) {
                     $last_user_id = mysqli_insert_id($conn); // Obtener el ID del nuevo usuario insertado
-                    $createChatsQuery = "CALL CreateChatsForNewUser($last_user_id)";                    
+                    $createChatsQuery = "CALL CreateChatsForNewUser($unique_id)";                    
                     echo "<script>alert('Usuario registrado correctamente.'); window.location.href='register.php';</script>";
                 } else {
                     echo "Error al registrar el usuario: " . mysqli_error($conn);
