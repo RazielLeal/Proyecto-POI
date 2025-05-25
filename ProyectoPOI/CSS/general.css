@@ -87,41 +87,41 @@ nav a:hover {
     background: rgba(255, 73, 73, 0.826);
 }
 
-nav a:nth-child(1){
+nav #chatprivado{
     background-image: url("img/chat-icon.png"); 
     background-position: center;
     background-repeat: no-repeat;
     animation: fadeIn 1.0s ease-in; 
 }
 
-nav a:nth-child(2){
+nav #grupal{
     background-image: url("img/group-icon.png"); 
     background-position: center;
     background-repeat: no-repeat;
     animation: fadeIn 1.3s ease-in; 
 }
 
-nav a:nth-child(3){
+nav #tasks{
     background-image: url("img/task-icon.png"); 
     background-position: center;
     background-repeat: no-repeat;
     animation: fadeIn 1.6s ease-in; 
 }
 
-nav a:nth-child(4){
+nav #rewards{
     background-image: url("img/reward-icon.png"); 
     background-position: center;
     background-repeat: no-repeat;
     animation: fadeIn 1.9s ease-in; 
 }
 
-nav a:nth-child(5){
+nav #settings{
     background-image: url("img/settings-icon.png"); 
     background-position: center;
     background-repeat: no-repeat;
     animation: fadeIn 2.2s ease-in; 
 }
-nav a:nth-child(6){
+nav #logout{
     background-image: url("img/logout.png"); 
     background-position: center;
     background-repeat: no-repeat;

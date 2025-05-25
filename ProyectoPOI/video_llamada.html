@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videollamada</title>
+    <link rel="stylesheet" href="CSS/general.css">
+    <link rel="stylesheet" href="CSS/videollamada.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Nombre o logo</h1>
+            <img src="CSS/img/avatar.png" alt="Avatar" class="avatar" id="user-avatar">
+        </nav>
+    </header>
+
+    <h1>Videollamada en curso...</h1>
+
+    <main>
+        <div class="video-container">
+            <video id="localVideo" autoplay muted></video>
+            <video id="remoteVideo" autoplay></video>
+        </div>
+        <button onclick="endCall()">Finalizar llamada</button>
+    </main>
+
+    <script src="JS/videollamada.js"></script>
+</body>
+</html>
